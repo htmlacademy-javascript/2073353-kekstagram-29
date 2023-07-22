@@ -20,16 +20,15 @@ const createComment = () => ({
 });
 
 
-const createComments = (arrayLength, buildFunction) => Array.from({ length: arrayLength }, buildFunction);
+const createComments = (arrayLength) => Array.from({ length: arrayLength }, createComment);
 
 const createObject = () => ({
   id: getRandomElementFromPull(objectIDs),
   url: `photos/${getRandomElementFromPull(photoIDs)}.jpg`, //'строка — адрес картинки вида photos/{{i}}.jpg, где {{i}} — это число от 1 до 25. Адреса картинок не должны повторяться.'
   description: getRandomElementFromArray(photoDescription),//'строка — описание фотографии. Описание придумайте самостоятельно.',
   likes: getRandomInteger(15, 200), //'число — количество лайков, поставленных фотографии. Случайное число от 15 до 200.',
-  comments: createComments (getRandomInteger(0, 30), createComment)
+  comments: createComments (getRandomInteger(0, 30))
 });
 
 
 export const createPosts = (arrayLength) => Array.from({ length: arrayLength }, createObject);
-

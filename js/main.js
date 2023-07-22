@@ -1,3 +1,5 @@
 import './data.js';
 import {createPosts} from './data.js';
-createPosts(25);
+import {renderPhotos} from './pictures.js';
+const mockData = createPosts(25);
+renderPhotos(mockData);
