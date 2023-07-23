@@ -9,7 +9,7 @@ const commentIds = createArray(750);
 
 const createComment = () => ({
   id: getRandomElementFromPull(commentIds), //id — любое число. Идентификаторы не должны повторяться.
-  avatar: `img/avatar-${getRandomInteger(1, 25)}.svg`, //строка, значение которой формируется по правилу img/avatar-{{случайное число от 1 до 6}}.svg.
+  avatar: `img/avatar-${getRandomInteger(1, 6)}.svg`, //строка, значение которой формируется по правилу img/avatar-{{случайное число от 1 до 6}}.svg.
   //Аватарки подготовлены в директории img.
   message: (
     Math.random() > 0.5
