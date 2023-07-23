@@ -4,7 +4,16 @@ import {renderPhotos} from './pictures.js';
 import {makePictureBig} from './bigPicture.js';
 
 const selectPicture = (photo) => {
-  makePictureBig(photo);
+  makePictureBig({
+    ...photo,
+    comments: {
+      length: photo.comments.length,
+      getPaginated: (page, pageSize) => {
+        const result = photo.comments.slice(page * pageSize, (page + 1) * pageSize);
+        return result;
+      },
+    }
+  });
 };
 
 const mockData = createPosts(25);
