@@ -27,7 +27,7 @@ export const makeBigPicture = (data) => {
 
   const refreshCounter = () => {
     const curCount = page * pageSize;
-//console.log(curCount + ' < ' + totalCommentsCount);
+    //console.log(curCount + ' < ' + totalCommentsCount);
     const isFullLoaded = curCount >= totalCommentsCount;
     const displayCount = isFullLoaded ? totalCommentsCount : curCount;
     bigPicture.querySelector('.comments-current-count').textContent = displayCount;
