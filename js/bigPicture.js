@@ -51,22 +51,24 @@ export const makeBigPicture = (data) => {
   };
   renderMoreComments();
   const loader = document.querySelector('.social__comments-loader');
-  loader.addEventListener('click', () => {
-    renderMoreComments();
-  });
+  loader.onclick = renderMoreComments;
+
 
   bigPicture.querySelector('.social__caption').textContent = data.description;
   bigPicture.classList.remove('hidden');
   document.body.classList.add('modal-open');
 };
 
-document.querySelector('.big-picture__cancel').addEventListener('click', () => {
+const closeButton = document.querySelector('.big-picture__cancel');
+const closePicture = () => {
   document.querySelector('.big-picture').classList.add('hidden');
-});
+};
+closeButton.onclick = closePicture;
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     document.querySelector('.big-picture').classList.add('hidden');
+
   }
 });
 
