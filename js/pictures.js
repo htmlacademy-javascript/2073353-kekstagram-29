@@ -3,7 +3,6 @@ const createPhotoElement = (photoData, onClick) => {
   const photoTemplate = document.querySelector('#picture')
     .content
     .querySelector('.picture');
-  // /** @type {HTMLElement} */
   const newPhoto = photoTemplate.cloneNode(true);
   newPhoto.querySelector('img').src = url;
   newPhoto.addEventListener ('click', () => {
