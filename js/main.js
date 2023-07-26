@@ -2,6 +2,10 @@ import './data.js';
 import {createPosts} from './data.js';
 import {renderPhotos} from './pictures.js';
 import {makeBigPicture} from './bigPicture.js';
+import {setupUploader} from './form.js';
+import { initiateValidator } from './validation.js';
+
+initiateValidator();
 
 const selectPicture = (photo) => {
   makeBigPicture({
@@ -19,3 +23,4 @@ const selectPicture = (photo) => {
 const mockData = createPosts(25);
 renderPhotos(mockData, selectPicture);
 
+setupUploader();
