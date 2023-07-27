@@ -4,6 +4,7 @@ import {renderPhotos} from './pictures.js';
 import {makeBigPicture} from './bigPicture.js';
 import {setupUploader} from './form.js';
 import { initiateValidator } from './validation.js';
+import { init } from './effects.js';
 
 initiateValidator();
 
@@ -24,3 +25,5 @@ const mockData = createPosts(25);
 renderPhotos(mockData, selectPicture);
 
 setupUploader();
+
+init();
